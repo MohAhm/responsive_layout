@@ -1,2 +1,3 @@
-# responsive_layout
- Techdegree Project Unit-02
+# Techdegree Project 2
+
+Techdegree Project Unit-02
