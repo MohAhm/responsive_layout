@@ -38,16 +38,16 @@ h3 {
 a {
     color: #4A4A4A;
     text-decoration: none;
+    transition: all 0.5s;
+}
+
+li a:hover {
+    color: #099;
 }
 
 a,
 ul {
     list-style: none;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
 }
 
 img {
@@ -59,15 +59,20 @@ img {
   Navigation
 ==================================== */
 
-.name-header {
+.name-header,
+.name-footer {
     font-family: 'Work Sans', sans-serif;
+}
+
+.name-header {
     font-size: 1.75em;
+    font-weight: 700;
     margin: 0;
     padding: 0;
 }
 
 .main-nav {
-    margin-top: 5px;
+    padding: 0;
 }
 
 .main-nav li {
@@ -78,12 +83,7 @@ img {
 .main-nav a {
     text-transform: uppercase;
     font-weight: 700;
-    background: #FFF;
-    transition: all 0.5s;
-}
-
-.main-nav a:hover {
-    color: #099;
+    background-color: #FFF;
 }
 
 .name-header a,
@@ -114,36 +114,39 @@ img {
 }
 
 .container {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0 5%;
+}
+
+.col {
+    padding: 0 1em 2em;
 }
 
 .profile-photo {
-    width: 200px;
+    width: 60%;
 }
 
 #portfolio {
-    background: #fff;
-    padding-bottom: 30px;
+    background: #FFF;
 }
 
-.portfolio-gallery li {
-    margin-bottom: 40px;
-}
-
-#contact,
-.portfolio-gallery {
+.row,
+#contact {
     margin: 0;
     text-align: center;
 }
 
 #contact {
-    padding-bottom: 70px;
+    padding: 1em 1em 3em;
     border-bottom: 2px solid #E7E7E7;
 }
 
 #contact p {
-    margin-top: 0;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+.contact-info {
+    padding: 0;
 }
 
 .contact-info li {
@@ -156,22 +159,132 @@ img {
 }
 
 .main-footer {
+    display: flex;
+    justify-content: space-between;
     font-weight: 700;
     padding: 2em 0;
 }
 
 .name-footer {
-    font-size: 1em;
-    float: left;
+    font-size: 1.12em;
 }
 
-.nav-footer {
-    float: right;
-    margin-top: 10px;
+.hidden {
+    display: block;
 }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+.footer-nav {
+    display: none;
+}
+
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .main-header,
+    .main-nav,
+    .banner,
+    .row,
+    .footer-nav {
+        display: flex;
+    }
+
+    .main-header {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 0;
+    }
+
+    .main-nav a {
+        background-color: transparent;
+    }
+
+    .banner {
+        padding-bottom: 60px;
+    }
+
+    .bannar-col {
+        flex: 1;
+    }
+
+    .banner p {
+        order: -1;
+        flex: 2;
+        margin: 0;
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    #portfolio {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .row {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .col {
+        flex: 1 50%;
+    }
+
+    #contact p {
+        width: 65%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .footer-nav {
+        margin: 0;
+    }
+
+    .footer-nav a {
+        padding-left: 30px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .container {
+        width: 80%;
+        max-width: 1150px;
+    }
+
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .main-nav {
+        margin: 0;
+    }
+
+    .main-nav a {
+        padding: 0 0 0 30px;
+    }
+
+    .col {
+        flex-basis: 33.3333%;
+    }
+
 }
