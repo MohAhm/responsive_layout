@@ -1,3 +1,3 @@
-# Techdegree Project 2
+# Mobile-first Responsive Layout
 
-Techdegree Project Unit-02
+A web page that adjusts to mobile phones, tablets, and desktop displays.
